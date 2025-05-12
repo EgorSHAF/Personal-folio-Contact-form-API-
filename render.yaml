@@ -1,9 +1,11 @@
 services:
   - type: web
-    name: your-aspnet-app
+    name: contact-form-api
     runtime: dotnet
-    buildCommand: dotnet publish -c Release -o ./publish
-    startCommand: dotnet ./publish/YourApp.dll
+    buildCommand: dotnet publish -c Release -o out
+    startCommand: dotnet ./out/FormForPF.dll
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
+      - key: ConnectionStrings__DefaultConnection
+        value: Host=...;Port=...;Database=...;Username=...;Password=...
